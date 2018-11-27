@@ -105,9 +105,11 @@ applications:
     to:
     - lxd:1
   cinder-ceph:
+    series: bionic
     charm: cs:cinder-ceph
     num_units: 0
   cinder-backup-swift:
+    series: bionic
     charm: cinder-backup-swift
     num_units: 0
     options:

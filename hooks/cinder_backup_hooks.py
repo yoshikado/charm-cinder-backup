@@ -21,8 +21,8 @@ from cinder_backup_utils import (
     register_configs,
     restart_map,
     PACKAGES,
-    VERSION_PACKAGE,
     configure_ca,
+    REQUIRED_INTERFACES,
 )
 from cinder_backup_contexts import (
     SwiftBackupSubordinateContext
@@ -41,11 +41,11 @@ from charmhelpers.core.host import (
     service_restart,
 )
 from charmhelpers.contrib.openstack.utils import (
-    os_application_version_set,
     set_unit_paused,
     set_unit_upgrading,
     clear_unit_paused,
     clear_unit_upgrading,
+    set_os_workload_status,
 )
 from charmhelpers.payload.execd import execd_preinstall
 
@@ -124,5 +124,4 @@ if __name__ == '__main__':
         hooks.execute(sys.argv)
     except UnregisteredHookError as e:
         log('Unknown hook {} - skipping.'.format(e))
-    # set_os_workload_status(CONFIGS, REQUIRED_INTERFACES)
-    os_application_version_set(VERSION_PACKAGE)
+    set_os_workload_status(CONFIGS, REQUIRED_INTERFACES)

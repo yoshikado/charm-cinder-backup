@@ -39,6 +39,7 @@ TEMPLATES = 'templates/'
 # Map config files to hook contexts and services that will be associated
 # with file in restart_on_changes()'s service map.
 CONFIG_FILES = {}
+REQUIRED_INTERFACES = {}
 
 
 def register_configs():
